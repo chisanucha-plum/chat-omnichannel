@@ -18,7 +18,7 @@ class MessageType(str,Enum):
 @dataclass
 class Message:
     type : MessageType
-    text : setattr
+    text : str
     timestamp : datetime
     
 @dataclass
