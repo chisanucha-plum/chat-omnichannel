@@ -14,9 +14,15 @@ async def healthcheck():
 config = Configuration.get_config()
 
 # line
-@router.post("/line/webhook", status_code=status.HTTP_200_OK)
+@router.post("/line", status_code=status.HTTP_200_OK)
 async def line_webhook(request: Request, response: Response):
     request_body = json.loads(await request.body())
 
+    return JSONResponse(content={"code": 200, "message": "ok"}, status_code=status.HTTP_200_OK)
+    
+@router.post("/rocket", status_code=status.HTTP_200_OK)
+async def rocket_webhook(request: Request, response: Response):
+    request_body = json.loads(await request.body())
+    print(request_body)
     return JSONResponse(content={"code": 200, "message": "ok"}, status_code=status.HTTP_200_OK)
     
