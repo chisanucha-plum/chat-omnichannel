@@ -32,11 +32,13 @@ class Configuration:
     @staticmethod
     @lru_cache()
     def get_config():
+
+        site = os.getenv("SERVICE_SITE","development")
+        config_file =f"config.{site}.json" 
+
+        with open(config_file, "r", encoding="utf-8") as config_str:
+            content = config_str.read()
+            json_data = json.loads(content)
         
-        site = os.environ.get("SERVICE_SITE","development")
-        with open(f"config.{site}.json", "r") as f:
-                        
-            json_data =  json.loads(f.read())
-            
             return Configuration.from_dict(json_data)
         
