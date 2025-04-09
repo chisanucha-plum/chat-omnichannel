@@ -6,5 +6,8 @@
             "channel_id":"2007230286",
             "channel_secret":"f4551bc8f30a7f40f3abc0ae5ea923c2"
         }
-    ]
+    ],
+    "rocket_chat":{
+        "host":"http://10.17.250.81:3001"
+    }
 }
