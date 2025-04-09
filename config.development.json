@@ -1,0 +1,10 @@
+{
+    "channels":[
+        {
+            "platform":"line",
+            "name":"ofm-rocket(test)",
+            "channel_id":"2007230286",
+            "channel_secret":"f4551bc8f30a7f40f3abc0ae5ea923c2"
+        }
+    ]
+}
