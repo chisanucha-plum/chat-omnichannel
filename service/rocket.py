@@ -113,7 +113,7 @@ class RocketChatClient:
             self, 
             token: str,
             rid: Optional[str] = None, 
-            agentId: Optional[str] = None,
+            agent_id: Optional[str] = None,
         ):
         """
         Get or create livechat room in Rocket.Chat.
@@ -122,7 +122,7 @@ class RocketChatClient:
             params = {key: value for key, value in {
                 "token": token,
                 "rid": rid,
-                "agentId": agentId
+                "agentId": agent_id
             }.items() if value is not None}
             
             response = self.get(
