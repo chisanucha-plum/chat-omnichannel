@@ -21,13 +21,24 @@ class Channel:
         return Channel(_platform, _name, _channel_id, _channel_secret)
 
 @dataclass
+class RokcetChat:
+    host: str
+    @staticmethod
+    def from_dict(obj: Any) -> 'RokcetChat':
+        _host = str(obj.get("host"))
+       
+        return RokcetChat(_host)
+
+@dataclass
 class Configuration:
     channels: List[Channel]
+    rocket_chat: RokcetChat
 
     @staticmethod
     def from_dict(obj: Any) -> 'Configuration':
         _channels = [Channel.from_dict(y) for y in obj.get("channels")]
-        return Configuration(_channels)
+        _rocket_chat = RokcetChat.from_dict(obj.get("rocket_chat"))
+        return Configuration(_channels,_rocket_chat)
     
     @staticmethod
     @lru_cache()
