@@ -8,6 +8,8 @@
         }
     ],
     "rocket_chat":{
-        "host":"http://10.17.250.81:3001"
+        "host":"http://10.17.250.81:3001",
+        "auth_token": "nGRd6SdNmEnaW7YjsqFnyZRfzxZsD4wD85mag1ynsvw"
+        
     }
 }
