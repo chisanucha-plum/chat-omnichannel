@@ -55,7 +55,6 @@ class RocketChatClient:
              
             visitor["_updatedAt"] = updated_at
             
-        
         return Visitor(
             id=visitor.get('_id'),
             token=visitor.get('token'),
@@ -90,13 +89,13 @@ class RocketChatClient:
             )
             return response.json()
         except Exception as e:
-            print(f"Error creating livechat visitor: {e}")
-            return None
+            raise RuntimeError(f"Error creating livechat visitor: {e}")
         
     def get_livechat_visitor(self,token : str) :
-        
+        """
+        Get a livechat visitor in Rocket.Chat.
+        """
         try:
-            
             response = self.get(
                 '/api/v1/livechat/visitor/{token}'.format(token=token),
             )
@@ -107,7 +106,34 @@ class RocketChatClient:
             return self._map_visitor_data(response.get("visitor"))
         
         except Exception as e:
-            print(f"Error get livechat visitor: {e}")
-            return None
+            raise RuntimeError(f"Error get livechat visitor: {e}")
         
         
+    def get_livechat_room(
+            self, 
+            token: str,
+            rid: Optional[str] = None, 
+            agentId: Optional[str] = None,
+        ):
+        """
+        Get or create livechat room in Rocket.Chat.
+        """
+        try:
+            params = {key: value for key, value in {
+                "token": token,
+                "rid": rid,
+                "agentId": agentId
+            }.items() if value is not None}
+            
+            response = self.get(
+                '/api/v1/livechat/room',
+                params=params
+            )
+            
+            if response.get("room") is None:
+                raise ValueError("get or create livechat room failed")
+            
+            return response
+        
+        except Exception as e:
+            raise RuntimeError(f"Error get livechat visitors: {e}")
