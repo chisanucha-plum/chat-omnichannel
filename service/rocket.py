@@ -137,3 +137,31 @@ class RocketChatClient:
         
         except Exception as e:
             raise RuntimeError(f"Error get livechat visitors: {e}")
+        
+        
+        
+    def send_livechat_message(
+            self, 
+            token: str, 
+            rid: str, 
+            msg: str, 
+        ):
+        """
+        Send a livechat message in Rocket.Chat.
+        """
+        try:
+            json_data = { 
+                "token": token,
+                "rid": rid,
+                "msg": msg
+            }
+            
+            response = self.post(
+                '/api/v1/livechat/message',
+                json=json_data
+            )
+            
+            return response
+        
+        except Exception as e:
+            raise RuntimeError(f"Error send livechat message: {e}")
