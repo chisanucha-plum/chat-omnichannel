@@ -11,6 +11,8 @@ class Channel:
     name: str
     channel_id: str
     channel_secret: str
+    user_id: str 
+    access_token: str 
 
     @staticmethod
     def from_dict(obj: Any) -> 'Channel':
@@ -18,7 +20,9 @@ class Channel:
         _name = str(obj.get("name"))
         _channel_id = str(obj.get("channel_id"))
         _channel_secret = str(obj.get("channel_secret"))
-        return Channel(_platform, _name, _channel_id, _channel_secret)
+        _user_id = str(obj.get("user_id"))
+        _access_token = str(obj.get("access_token"))
+        return Channel(_platform, _name, _channel_id, _channel_secret, _user_id, _access_token)
 
 @dataclass
 class RokcetChat:
