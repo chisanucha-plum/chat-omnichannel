@@ -26,8 +26,8 @@ async def line_webhook(request: Request, response: Response):
         logger.info(f"Found {len(events)} events")
         
         # สร้าง instance ของ LineService
-        channel_access_token = "OO5kfNJ+/HGFZTk48V5vPsf9756XnasdnZcaCPwxBaE+imt0RLL5hKLkrkW8BckTz2SlXNxZbLDppV70sqVvICOqA8CIxyB05VcLanOjhHxm6HVTBWNyOK8zBogALc52nhzf18vpPMTFyQZmL6VwMAdB04t89/1O/w1cDnyilFU="  # แทนที่ด้วย token ของคุณ
-        line_service = LineService(channel_access_token)
+        oa_uid = body.get("destination")  # รับ channel_access_token จาก bodทนที่ด้วย token ของคุณ
+        line_service = LineService(oa_uid)
         
         for event in events:
             logger.info(f"Processing event: {event}")

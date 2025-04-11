@@ -14,16 +14,32 @@ class MessageType(str,Enum):
     AUDIO = "AUDIO"
     FILE = "FILE"
     STICKER = "STICKER"
+    
+
+    
 
 @dataclass
 class Message:
-    type : MessageType
     text : str
     timestamp : datetime
+    type : MessageType
+    
+@dataclass    
+class Sender:
+    id : str
+    display_name : str
+    Platform : PlatformType
     
 @dataclass
+class Receiver:
+    id : str
+    display_name : str
+    Platform : PlatformType
+    
+       
+@dataclass
 class Messages:
-    sender: str
-    receiver: str
+    sender: Sender
+    receiver: Receiver
     platform: PlatformType
     messages: list[Message]
