@@ -1,3 +1,6 @@
+from model.configuration import Configuration as SystemConfiguration
+
+
 import requests
 import logging
 
@@ -8,9 +11,18 @@ LINE_API_URL = "https://api.line.me/v2/bot/profile/"
 
 class LineService:
     
-    def __init__(self, channel_access_token):
+    def __init__(self, oa_user_id: str) -> None:
+        config = SystemConfiguration.get_config()
+        
+        channels = config.channels
+        
+        for channel in channels:
+            if channel.user_id == oa_user_id:
+                self.channel = channel
+                
+                
         self.headers = {
-            "Authorization": f"Bearer {channel_access_token}"
+            "Authorization": f"Bearer {channel.access_token}"
         }
 
     def get_user_profile(self, user_id):

@@ -4,7 +4,9 @@
             "platform":"line",
             "name":"ofm-rocket(test)",
             "channel_id":"2007230286",
-            "channel_secret":"f4551bc8f30a7f40f3abc0ae5ea923c2"
+            "channel_secret":"f4551bc8f30a7f40f3abc0ae5ea923c2",
+            "user_id":"Uf675f337326d0138078165142f6585c3",
+            "access_token":"xc3ktBtz3GK6p7wF8iVb0Np9XS24Ma5Zb0X1HQiSg3pjMQe0CmBLZmg8Bnsk1oSNxCy2mdUEO79JvfMoi78+hLmfODMssuKXPIWSi7KLR2+v5OL1+bWMIoy58pI+SN7ZEk7tf+0XFyiJW1jwic8SswdB04t89/1O/w1cDnyilFU="
         }
     ],
     "rocket_chat":{
