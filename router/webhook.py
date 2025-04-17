@@ -40,7 +40,7 @@ async def line_webhook(request: Request, response: Response):
                 # ดึงข้อมูลโปรไฟล์ของผู้ใช้
                 profile_data = line_service.get_user_profile(user_id)
                 if profile_data:
-                    user_name = profile_data.get("displayName", "Unknown")
+                    user_name = f"[LINE] {profile_data.get('displayName', 'Unknown')}"
                     user_picture = profile_data.get("pictureUrl", "")
                     logger.info(f"User name: {user_name}, Picture URL: {user_picture}")
                 else:
@@ -55,10 +55,9 @@ async def line_webhook(request: Request, response: Response):
                 # สร้าง visitor object
                 visitor = Visitor(
                     token=visitor_token,  
-                    username=f"line_{visitor_token}",  # เพิ่ม prefix 'line_' เพื่อให้ชัดเจน
-                    name=user_name,  
-                    avatar=user_picture ,
-                    department="สอบถามเพิ่มเติม"
+                    username=f"line_{visitor_token}",  
+                    name=user_name,              
+                    department="[LINE]สอบถามเพิ่มเติม"
                 )
 
         
@@ -132,7 +131,7 @@ async def rocket_webhook(request: Request):
         line_user_id = visitor_token
 
         
-        channel_access_token = ch
+        channel_access_token = body.get("channel", {}).get("channel_access_token")
         line_service = LineService(channel_access_token)
         send_result = line_service.send_text_message(user_id=line_user_id, text=msg_text)
 
