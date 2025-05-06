@@ -46,6 +46,7 @@ class LineService:
             "to": user_id,
             "messages": [
                 {
+                    
                     "type": "text",
                     "text": text
                 }

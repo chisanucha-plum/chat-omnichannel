@@ -89,7 +89,7 @@ async def line_webhook(request: Request, response: Response):
                 logger.info(f"Using room ID: {room_id}")
 
 
-                # 3. ส่งข้อความเข้า Rocket.Chat LiveChat
+                # ส่งข้อความเข้า Rocket.Chat LiveChat
                 logger.info(f"Sending message to room {room_id}")
                 rocket_response = client.send_livechat_message(
                     token=visitor_token,

@@ -79,6 +79,7 @@ class RocketChatClient:
                 "status": visitor.status,
                 "ts": visitor.ts,
                 "department": visitor.department
+                
             }.items() if value is not None}
             
             response = self.post(

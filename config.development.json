@@ -6,12 +6,12 @@
             "channel_id":"2007230286",
             "channel_secret":"f4551bc8f30a7f40f3abc0ae5ea923c2",
             "user_id":"Uf675f337326d0138078165142f6585c3",
-            "access_token":"xc3ktBtz3GK6p7wF8iVb0Np9XS24Ma5Zb0X1HQiSg3pjMQe0CmBLZmg8Bnsk1oSNxCy2mdUEO79JvfMoi78+hLmfODMssuKXPIWSi7KLR2+v5OL1+bWMIoy58pI+SN7ZEk7tf+0XFyiJW1jwic8SswdB04t89/1O/w1cDnyilFU="
+            "access_token":"OO5kfNJ+/HGFZTk48V5vPsf9756XnasdnZcaCPwxBaE+imt0RLL5hKLkrkW8BckTz2SlXNxZbLDppV70sqVvICOqA8CIxyB05VcLanOjhHxm6HVTBWNyOK8zBogALc52nhzf18vpPMTFyQZmL6VwMAdB04t89/1O/w1cDnyilFU="
         }
     ],
     "rocket_chat":{
         "host":"http://10.17.250.81:3001",
-        "auth_token": "nGRd6SdNmEnaW7YjsqFnyZRfzxZsD4wD85mag1ynsvw"
+        "auth_token": "R5cMNt-zOQ86iUqnMu70TbwWI1cFTDDXbMEB5VxljKV"
         
     }
 }

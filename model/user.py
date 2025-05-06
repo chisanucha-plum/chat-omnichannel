@@ -10,5 +10,7 @@ class Visitor:
     status : Optional[str] = None
     ts : Optional[str] = None
     name : Optional[str] = None
-    department : Optional[str] = None
+    # avatar : Optional[str] = None
+    department: Optional[str] = None 
     updated_at : Optional[datetime] = None
+    
